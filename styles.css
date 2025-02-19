@@ -73,6 +73,7 @@ footer {
     grid-template-columns: 1fr 3px 1fr;
     font-family: 'Arial', sans-serif;
     color: #fff;
+    position: relative;
 }
 
 .timeline__year {
@@ -81,7 +82,8 @@ footer {
     color: #ff007f;
     text-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
     text-align: center;
-    margin: 50px 0;
+    position: relative;
+    margin: 20px -60px;
     animation: pulse 2s infinite alternate ease-in-out; /* Floating animation */
 }
 
@@ -91,7 +93,7 @@ footer {
 }
 
 .timeline__component {
-    margin: 0 20px 20px 20px;
+    margin: 100px 20px 20px 20px;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -124,15 +126,33 @@ footer {
     height: 15px;
     background: #626df6;
     border-radius: 50%;
+    margin: 100px 0px;
+}
+
+.timeline__point--top {
+    top: initial;
+    top: 0;
+    margin-top: 0px;
 }
 
 .timeline__point--bottom {
     top: initial;
     bottom: 0;
+    margin-bottom: 0px;
+}
+
+.timeline__date {
+    margin: 100px 20px 20px 20px;
 }
 
 .timeline__date--right {
     text-align: right;
+    transform: scale(1);
+}
+
+.timeline__date--left {
+    text-align: left;
+    transform: scale(1);
 }
 
 .timeline__title {
