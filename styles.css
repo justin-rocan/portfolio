@@ -34,30 +34,6 @@ h2 {
     color: #626df6;
 }
 
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.game-card {
-    background-color: #282a36;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.game-card:hover {
-    transform: scale(1.05);
-}
-
-.game-card img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
 footer {
     margin-top: 20px;
     padding: 10px;
@@ -87,7 +63,7 @@ footer {
     color: transparent;
     background-clip: text;
     letter-spacing: -8px;
-    animation: pulse 3s infinite alternate ease-in-out;
+    /* animation: pulse 3s infinite alternate ease-in-out; */
 }
 
 @keyframes pulse {
@@ -95,32 +71,12 @@ footer {
     100% { transform: scale(1.1); opacity: 1; }
 }
 
-.timeline__component {
-    margin: 150px 20px 20px 20px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.timeline__component--bg:not(.expanded):hover {
-    animation: tilt-shaking 0.5s infinite;
-}
-
 @keyframes tilt-shaking {
-    25% { transform: rotate(5deg); }
+    25% { transform: rotate(2deg); }
     50% { transform: rotate(0eg); }
-    75% { transform: rotate(-5deg); }
+    75% { transform: rotate(-2deg); }
     100% { transform: rotate(0deg); }
   }
-
-.timeline__component--bg {
-    padding: 1.5em;
-    background: #282a36;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    max-height: 80px;
-    transition: max-height 0.5s ease-in-out;
-}
 
 .timeline__middle {
     position: relative;
@@ -151,61 +107,70 @@ footer {
     margin-bottom: 0px;
 }
 
-.timeline__date {
-    margin: 150px 20px 20px 20px;
-}
-
 .timeline__date--right {
     text-align: right;
     transform: scale(1);
+    margin: 150px 20px 20px 20px;
 }
 
 .timeline__date--left {
     text-align: left;
     transform: scale(1);
+    margin: 150px 20px 20px 20px;
 }
 
-.timeline__title {
+.game-card__title {
     margin: 0;
     font-size: 1.15em;
     font-weight: bold;
     color: #626df6;
 }
 
-.timeline__paragraph {
+.game-card__paragraph {
     line-height: 1.5;
     display: none;
 }
 
-.timeline__component--bg.expanded .timeline__paragraph {
-    display: block;
-}
-
-.timeline__expanded-content {
+.game-card__expanded-content {
     display: none;
     margin-top: 10px;
 }
 
-.timeline__component--bg.expanded .timeline__expanded-content {
+.game-card.expanded .game-card__paragraph {
     display: block;
 }
 
-.timeline__component--bg {
-    height: 100px;
-    transition: all 0.3s ease;
+.game-card.expanded .game-card__expanded-content {
+    display: block;
+}
+
+.game-card {
+    margin: 150px 20px 20px 20px;
+    padding: 1.5em;
+    background: #282a36;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     overflow: hidden;
+    max-height: 80px;
+    transition: max-height 0.5s ease-in-out;
+    height: 100px;
     cursor: pointer;
 }
 
-.timeline__component--bg.expanded {
+.game-card.expanded {
     max-height: 500px;
 }
 
-.timeline__component--bg.expanded {
+.game-card.expanded {
     width: 400px;
     height: 300px;
 }
 
-.timeline__component--bg:focus {
+.game-card:not(.expanded):hover {
+    animation: tilt-shaking 0.5s infinite;
+}
+
+.game-card:focus {
     outline: none;   /* Remove focus outline if any */
 }
+
