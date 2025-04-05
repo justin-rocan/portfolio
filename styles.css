@@ -42,14 +42,11 @@ footer {
 
 /* Timeline Styles */
 .timeline {
-    margin: 0 auto;
-    max-width: 750px;
+    margin: 0px 50px 50px 50px;
     padding: 25px;
     display: grid;
     grid-template-columns: 1fr 3px 1fr;
     font-family: 'Arial', sans-serif;
-    color: #fff;
-    position: relative;
 }
 
 .timeline__year {
@@ -108,27 +105,50 @@ footer {
 }
 
 .timeline__date--right {
-    text-align: right;
-    transform: scale(1);
-    margin: 150px 20px 20px 20px;
-}
-
-.timeline__date--left {
     text-align: left;
     transform: scale(1);
     margin: 150px 20px 20px 20px;
 }
 
-.game-card__title {
-    margin: 0;
-    font-size: 1.15em;
-    font-weight: bold;
-    color: #626df6;
+.timeline__date--left {
+    text-align: right;
+    transform: scale(1);
+    margin: 150px 20px 20px 20px;
 }
 
-.game-card__paragraph {
-    line-height: 1.5;
-    display: none;
+.timeline__card--left {
+    display: flex;
+    justify-content: flex-end
+}
+
+.timeline__card--right {
+    display: flex;
+    justify-content: flex-start
+}
+
+.game-card {
+    margin: 150px 20px 20px 20px;
+    padding: 22px;
+    background: #282a36;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 250px;
+    transition: max-height 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.game-card.expanded {
+    max-width: 800px;
+    width: 100%;
+}
+
+.game-card:not(.expanded):hover {
+    animation: tilt-shaking 0.5s infinite;
+}
+
+.game-card:focus {
+    outline: none;   /* Remove focus outline if any */
 }
 
 .game-card__expanded-content {
@@ -144,33 +164,27 @@ footer {
     display: block;
 }
 
-.game-card {
-    margin: 150px 20px 20px 20px;
-    padding: 1.5em;
-    background: #282a36;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+.game-card__title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #626df6;
+    padding-bottom: 20px;
+}
+
+.game-card__paragraph {
+    line-height: 1.5;
+    display: none;
+}
+
+.game-card__thumbnail {
+    max-width: 100%; /* Makes the image resize to fit within the div's width */
+    max-height: 100%; /* Makes the image resize to fit within the div's height */
+    object-fit: contain; /* Ensures the image maintains its aspect ratio while fitting within the div */
     border-radius: 10px;
-    overflow: hidden;
-    max-height: 80px;
-    transition: max-height 0.5s ease-in-out;
-    height: 100px;
-    cursor: pointer;
 }
 
-.game-card.expanded {
-    max-height: 500px;
-}
 
-.game-card.expanded {
-    width: 400px;
-    height: 300px;
-}
 
-.game-card:not(.expanded):hover {
-    animation: tilt-shaking 0.5s infinite;
-}
 
-.game-card:focus {
-    outline: none;   /* Remove focus outline if any */
-}
 
