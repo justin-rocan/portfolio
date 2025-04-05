@@ -590,12 +590,13 @@
                     thumbnail.style.display = 'block';
                 }
 
-                // Scroll down to the center of the card
-                this.scrollIntoView({
-                    alignToTop: true,
-                    behavior: 'smooth',  // Smooth scrolling
-                    block: 'start'      // Center the div vertically
-                });
+                setTimeout(() => {
+                  // Scroll down to the center of the card
+                  this.scrollIntoView({
+                      behavior: 'smooth',  // Smooth scrolling
+                      block: 'start'      // Center the div vertically
+                  });
+                }, 500);
             });
         });
     });
