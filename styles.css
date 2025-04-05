@@ -16,6 +16,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #141028;
     background-image: url("background.png");
     background-repeat: repeat;
     color: #fff;
@@ -33,6 +34,11 @@ header {
     justify-content: space-between; /* Spaces the content between left and right */
     align-items: center; /* Aligns items vertically at the center */
   }
+
+.header__logo {
+    max-width: 50px; /* Makes the image resize to fit within the div's width */
+    margin: 0px 0px 0px 50px;
+}
 
 nav {
     display: flex; /* Aligns the nav items horizontally */
@@ -58,8 +64,8 @@ main {
 
 h1 {
     text-align: left;
-    margin: 0px 0px 0px 50px;
     color: #626df6;
+    margin: 0px 0px 0px 10px;
 }
 
 h2 {
@@ -156,7 +162,7 @@ footer {
 .game-card {
     margin: 150px 20px 20px 20px;
     padding: 22px;
-    background: #282a36;
+    background: hsl(235 43% 20% / 1);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     overflow: hidden;
@@ -193,10 +199,11 @@ footer {
 
 .game-card__title {
     margin: 0;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
-    color: #626df6;
+    color: white;
     padding-bottom: 20px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
 
 .game-card__paragraph {
