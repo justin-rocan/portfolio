@@ -31,7 +31,7 @@
                       <h2 class="game-card__title">Fangly.io</h2>
                       <img src="fangler-thumb-512.jpg" alt="Fangly Thumbnail" class="game-card__thumbnail">
                       <div class="game-card__expanded-content">
-                        <img src="fangler-full.jpg" alt="Screenshot 1">
+                        <img src="fangler-full.jpg" alt="Fangly Video" class="game-card__video">
                         <p class="game-card__paragraph">
                             This is a description of the game, including features and development details.
                         </p>
@@ -77,11 +77,23 @@
                 document.querySelectorAll('.game-card.expanded').forEach(expandedCard => {
                     if (expandedCard !== this) {
                         expandedCard.classList.remove('expanded');
+                        // Show the thumbnail of the collapsed card
+                        expandedCard.querySelector('.game-card__thumbnail').style.display = 'block';
                     }
                 });
-                
-                // Toggle the clicked card
+
+                // Toggle the expanded state of the clicked card
                 this.classList.toggle('expanded');
+
+                // If the card is expanded, hide the thumbnail
+                const thumbnail = this.querySelector('.game-card__thumbnail');
+                if (this.classList.contains('expanded')) {
+                    thumbnail.style.display = 'none';
+                } else {
+                    thumbnail.style.display = 'block';
+                }
+
+                // Scroll down to the center of the card
                 this.scrollIntoView({
                     behavior: 'smooth',  // Smooth scrolling
                     block: 'center'      // Center the div vertically
