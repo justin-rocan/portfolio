@@ -18,6 +18,7 @@ body {
     padding: 0;
     background-color: #141028;
     background-image: url("background.png");
+    background-size: 2000px;
     background-repeat: repeat;
     color: #fff;
     text-align: center;
@@ -75,10 +76,8 @@ h2 {
 footer {
     margin-top: 20px;
     padding: 10px;
-    background-color: #626df6;
 }
 
-/* Timeline Styles */
 .timeline {
     margin: 100px 50px 50px 50px;
     padding: 25px;
@@ -189,8 +188,12 @@ footer {
     margin-top: 10px;
 }
 
-.game-card.expanded .game-card__paragraph {
+.game-card.expanded .game-card__description {
     display: block;
+}
+
+.game-card.expanded .game-card__details {
+    display: grid;
 }
 
 .game-card.expanded .game-card__expanded-content {
@@ -206,9 +209,31 @@ footer {
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
 
-.game-card__paragraph {
+.game-card__description {
     line-height: 1.5;
     display: none;
+    text-align: left;
+    background: #00000045;
+    padding: 22px;
+    border-radius: 10px;
+}
+
+.game-card__wrapper {
+    display: flex;
+    justify-content: left;  /* Centers content horizontally */
+    align-items: center;      /* Centers content vertically */
+}
+
+.game-card__details {
+    margin: 0px;
+    line-height: 1.5;
+    display: none;
+    text-align: left;
+    background: #00000045;
+    padding: 22px;
+    border-radius: 10px;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 40px;
 }
 
 .game-card__thumbnail {
@@ -225,6 +250,11 @@ footer {
     border-radius: 10px;
 }
 
+.game-card__key {
+    font-weight: bold; /* Makes the key bold */
+    color: #a7a7a7; /* Optional: Sets the color of the key */
+    margin-right: 10px; /* Adds some space between the key and value */
+  }
 
 
 
